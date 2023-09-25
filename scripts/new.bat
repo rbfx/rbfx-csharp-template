@@ -11,6 +11,6 @@ if not exist "%folder%" (
 )
 
 pushd %~dp0\..\test
-dotnet new rbfx
+dotnet new rbfx.thirdperson
 popd
 

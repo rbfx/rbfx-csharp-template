@@ -1,3 +1,3 @@
-dotnet new uninstall rbfx.template
+dotnet new uninstall rbfx.template.thirdperson
 
 

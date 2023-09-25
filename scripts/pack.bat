@@ -1,6 +1,6 @@
 @echo off
 
-pushd %~dp0..\template
+pushd %~dp0..\thirdperson
 
 set "folder=%~dp0..\nuget\"
 set "version=0.0.1"

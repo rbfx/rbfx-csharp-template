@@ -2,7 +2,7 @@ name: BuildNugetPackage
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
   # pull_request:
   #   branches: [ "master" ]
 
@@ -43,3 +43,7 @@ jobs:
         name: v${{ env.VERSION }}
         tag_name: v${{ env.VERSION }}
         token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish to nuget.org
+      working-directory: ./nuget
+      run: dotnet nuget push *.${{ env.VERSION }}.nupkg --api-key ${{ secrets.RBFXTEMPLATETHIRDPERSON }} --source https://api.nuget.org/v3/index.json
