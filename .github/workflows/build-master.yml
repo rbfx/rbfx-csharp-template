@@ -31,7 +31,7 @@ jobs:
       run: mkdir ./nuget
 
     - name: Build Package
-      working-directory: ./template
+      working-directory: ./thirdperson
       run: dotnet pack ./RbfxTemplate.csproj -o ../nuget/ -p:PackageVersion=${{ env.VERSION }}
 
     - name: Release
@@ -39,7 +39,7 @@ jobs:
       # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          ./nuget/rbfx.template.${{ env.VERSION }}.nupkg
+          ./nuget/*.nupkg
         name: v${{ env.VERSION }}
         tag_name: v${{ env.VERSION }}
         token: ${{ secrets.GITHUB_TOKEN }}
