@@ -1,3 +1,6 @@
 [submodule "thirdperson"]
 	path = thirdperson
 	url = https://github.com/rbfx/rbfx-csharp-thirdperson
+[submodule "casual"]
+	path = casual
+	url = https://github.com/rbfx/rbfx-csharp-casual
