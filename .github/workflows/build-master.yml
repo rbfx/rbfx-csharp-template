@@ -31,6 +31,10 @@ jobs:
     - name: Make nuget folder
       run: mkdir ./nuget
 
+    - name: Build Empty Package
+      working-directory: ./empty
+      run: dotnet pack ./RbfxTemplate.csproj -o ../nuget/ -p:PackageVersion=${{ env.VERSION }}
+
     - name: Build Thrird Person Package
       working-directory: ./thirdperson
       run: dotnet pack ./RbfxTemplate.csproj -o ../nuget/ -p:PackageVersion=${{ env.VERSION }}

@@ -4,3 +4,6 @@
 [submodule "casual"]
 	path = casual
 	url = https://github.com/rbfx/rbfx-csharp-casual
+[submodule "empty"]
+	path = empty
+	url = https://github.com/rbfx/rbfx-csharp-empty
