@@ -8,7 +8,7 @@ function UpdateToolVersion($filePath, $version) {
     $json = Get-Content $filePath | ConvertFrom-Json
 
     # Update the version
-    $json.tools."unofficial.Urho3DNet.Editor".version = $version
+    $json.tools."ezpipeline".version = $version
 
     # Convert the updated object back to JSON
     $json | ConvertTo-Json -Depth 100 | Set-Content $filePath
@@ -51,5 +51,4 @@ foreach ($path in $paths) {
     Write-Output "Patching $submodulePath"
 
     UpdateToolVersion -filePath "$PSScriptRoot/../$submodulePath/.config/dotnet-tools.json" -version $version
-    UpdateVersionInPropsFile -filePath "$PSScriptRoot/../$submodulePath/Directory.Build.props" -version $version
 }
